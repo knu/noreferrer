@@ -94,7 +94,7 @@ do ->
             when '_self', window.name
               win = window
             else
-              doc = window.open(null, target)
+              win = window.open(null, target)
               # This may be an existing window, hence always call clear().
           doc = win.document
           doc.clear()
