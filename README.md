@@ -21,40 +21,42 @@ browsers without native support for the noreferrer link type.
 Requirements
 ------------
 
+Currently there is only one version available that is based on the
+prototype.js framework.
+
 * prototype.js
 
-Currently there is only one version available that is based on the
-prototype.js framework.  Versions for other popular frameworks such as
-jQuery will follow later.
+Versions for other popular frameworks such as jQuery will follow
+later.
 
 Compatibility
 -------------
 
 * Chrome, Safari, MobileSafari, and other WebKit-based browsers
 
-  These have native support for noreferrer links, so noreferrer.js
-  does nothing.
+    These have native support for noreferrer links, so noreferrer.js
+    does nothing.
 
 * Firefox
 
-  noreferrer.js uses a data URI technique to suppress Referer, plus
-  disables opening a new window with middle clicking.
+    noreferrer.js uses a data URI technique to suppress Referer, plus
+    disables opening a new window with middle clicking.
 
 * IE 6+
 
-  noreferrer.js uses a simple meta refresh technique to suppress
-  Referer, plus disables opening a new window with middle clicking.
+    noreferrer.js uses a simple meta refresh technique to suppress
+    Referer, plus disables opening a new window with middle clicking.
 
 * Opera
 
-  There seems to be no way to prevent the browser from sending a
-  Referer header, so noreferrer.js replaces all noreferrer links with
-  those using Google's redirector.
+    There seems to be no way to prevent the browser from sending a
+    Referer header, so noreferrer.js replaces all noreferrer links
+    with those using Google's redirector.
 
 Author
 ------
 
-Akinori MUSHA <knu@idaemons.org>
+Akinori MUSHA <<knu@idaemons.org>>
 
 License
 -------
