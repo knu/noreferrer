@@ -39,11 +39,6 @@ Compatibility
     These have native support for noreferrer links, so noreferrer.js
     does nothing.
 
-* Firefox
-
-    noreferrer.js uses a data URI technique to suppress Referer, plus
-    disables opening a new window with middle clicking.
-
 * IE 6+
 
     noreferrer.js uses a simple meta refresh technique to suppress
@@ -54,6 +49,11 @@ Compatibility
     There seems to be no way to prevent the browser from sending a
     Referer header, so noreferrer.js replaces all noreferrer links
     with those using Google's redirector.
+
+* Firefox and other browsers
+
+    noreferrer.js uses a data URI technique to suppress Referer, plus
+    disables opening a new window with middle clicking.
 
 Usage
 -----
