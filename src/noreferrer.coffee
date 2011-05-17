@@ -32,18 +32,22 @@ do ->
 
       kill_href = (ev = window.event) ->
         a.href = 'javascript:void(0)'
+        return
 
       restore_href = (ev = window.event) ->
         a.href = href
+        return
 
       Event.observe a, name, restore_href for name in ['mouseout', 'mouseover', 'focus', 'blur']
 
       Event.observe a, 'mousedown', (ev = window.event) ->
         if Event.isMiddleClick(ev)
           middlebutton = true
+        return
 
       Event.observe a, 'blur', (ev = window.event) ->
         middlebutton = false
+        return
 
       Event.observe a, 'mouseup', (ev = window.event) ->
         if Event.isMiddleClick(ev) && middlebutton
@@ -55,7 +59,9 @@ do ->
               Middle clicking on this link is disabled to keep the browser from sending a referrer.
               '''
             restore_href()
+            return
           ), 500
+        return
 
       body = """
           <html>
@@ -86,3 +92,9 @@ do ->
         Event.observe a, 'click', (ev = window.event) ->
           @href = uri
           true
+
+      return
+
+    return
+
+  return
