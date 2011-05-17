@@ -18,4 +18,4 @@ VPATH = src
 	haml $< > $@
 
 .coffee.js:
-	coffee -c -p $< > $@
+	coffee -c -p $< | closure-compiler --js - --js_output_file $@
