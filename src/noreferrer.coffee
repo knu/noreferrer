@@ -1,5 +1,5 @@
 `/**
-  @license noreferrer.js, version 0.1.1
+  @license noreferrer.js, version 0.1.2
   https://github.com/knu/noreferrer
 
   Copyright (c) 2011 Akinori MUSHA
