@@ -1,5 +1,5 @@
 `/**
-  @license noreferrer.js, version 0.1.2
+  @license noreferrer.js, version 0.1.3
   https://github.com/knu/noreferrer
 
   Copyright (c) 2011 Akinori MUSHA
@@ -50,17 +50,17 @@ do ->
         return
 
       Event.observe a, 'mouseup', (ev = window.event) ->
-        if Event.isMiddleClick(ev) && middlebutton
-          kill_href()
-          Event.stop(ev)
-          middlebutton = false
-          setTimeout (->
-            alert '''
-              Middle clicking on this link is disabled to keep the browser from sending a referrer.
-              '''
-            restore_href()
-            return
-          ), 500
+        return unless Event.isMiddleClick(ev) && middlebutton
+        kill_href()
+        Event.stop(ev)
+        middlebutton = false
+        setTimeout (->
+          alert '''
+            Middle clicking on this link is disabled to keep the browser from sending a referrer.
+            '''
+          restore_href()
+          return
+        ), 500
         return
 
       body = """
