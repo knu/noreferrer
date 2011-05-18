@@ -1,0 +1,29 @@
+!!! 5
+%html
+  %head
+    %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")/
+    %title noreferrer.js for jQuery demo
+    %link(href="demo.css" rel="stylesheet" type="text/css")/
+    %script(type="text/javascript" src="../vendor/jquery/jquery.min.js")
+    %script(type="text/javascript" src="../jquery.noreferrer.js")
+  %body
+    %p
+      referrer=
+      :javascript
+        document.write(document.referrer);
+    %ul
+      %li
+        %a(href="demo.html")
+          internal link
+      %li
+        %a(href="demo.html" rel="noreferrer")
+          external link
+      %li
+        %a(href="demo.html" rel="me noreferrer")
+          external link - rel=&quot;me noreferrer&quot;
+      %li
+        %a(href="demo.html" rel="noreferrer" target="_self")
+          external link - _self
+      %li
+        %a(href="demo.html" rel="noreferrer" target="_blank")
+          external link - new window

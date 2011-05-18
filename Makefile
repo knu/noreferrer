@@ -1,5 +1,7 @@
-JAVASCRIPTS=	noreferrer.js
-HTMLS=		demo/demo.html
+JAVASCRIPTS=	noreferrer.js \
+		jquery.noreferrer.js
+HTMLS=		demo/demo.html \
+		demo/demo-jquery.html
 
 all:	js html
 

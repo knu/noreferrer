@@ -15,19 +15,21 @@ At the time of writing, WebKit-based browsers such as Safari,
 MobileSafari and Chrome already support this feature but IE, Firefox
 and Opera do not.
 
-This piece of JavaScript tries to emulate the feature on those
+This package contains two variants of 
+
+piece of JavaScript tries to emulate the feature on those
 browsers without native support for the noreferrer link type.
 
 Requirements
 ------------
 
-Currently there is only one version available that is based on the
-prototype.js framework.
+* noreferrer.js depends on:
 
-* prototype.js
+    * prototype.js 1.6 or later
 
-Versions for other popular frameworks such as jQuery will follow
-later.
+* jquery.noreferrer.js depends on:
+
+    * jQuery 1.2 or later
 
 Compatibility
 -------------
@@ -52,6 +54,19 @@ Compatibility
     There seems to be no way to prevent the browser from sending a
     Referer header, so noreferrer.js replaces all noreferrer links
     with those using Google's redirector.
+
+Usage
+-----
+
+Just include either noreferrer.js or jquery.noreferrer.js, depending
+on the JavaScript framework you are using, at the end of the <head>
+part of an HTML document, and an onload event handler is attached to
+enable the noreferrer trick for each link with the noreferrer rel
+type.
+
+    <script type='text/javascript' src='noreferrer.js'></script>
+
+It does not deal with dynamically created links at the moment.
 
 Author
 ------
