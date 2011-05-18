@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <title>noreferrer.js for jQuery demo</title>
+    <link href='demo.css' rel='stylesheet' type='text/css' />
+    <script src='../vendor/jquery/jquery.min.js' type='text/javascript'></script>
+    <script src='../jquery.noreferrer.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <p>
+      referrer=
+      <script type='text/javascript'>
+        //<![CDATA[
+          document.write(document.referrer);
+        //]]>
+      </script>
+    </p>
+    <ul>
+      <li>
+        <a href='demo.html'>
+          internal link
+        </a>
+      </li>
+      <li>
+        <a href='demo.html' rel='noreferrer'>
+          external link
+        </a>
+      </li>
+      <li>
+        <a href='demo.html' rel='me noreferrer'>
+          external link - rel=&quot;me noreferrer&quot;
+        </a>
+      </li>
+      <li>
+        <a href='demo.html' rel='noreferrer' target='_self'>
+          external link - _self
+        </a>
+      </li>
+      <li>
+        <a href='demo.html' rel='noreferrer' target='_blank'>
+          external link - new window
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>
