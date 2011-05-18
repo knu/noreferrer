@@ -30,26 +30,26 @@ do ->
       # Disable opening a link in a new window with middle click
       middlebutton = false
 
-      kill_href = (ev = window.event) ->
+      kill_href = (ev) ->
         a.href = 'javascript:void(0)'
         return
 
-      restore_href = (ev = window.event) ->
+      restore_href = (ev) ->
         a.href = href
         return
 
       Event.observe a, name, restore_href for name in ['mouseout', 'mouseover', 'focus', 'blur']
 
-      Event.observe a, 'mousedown', (ev = window.event) ->
+      Event.observe a, 'mousedown', (ev) ->
         if Event.isMiddleClick(ev)
           middlebutton = true
         return
 
-      Event.observe a, 'blur', (ev = window.event) ->
+      Event.observe a, 'blur', (ev) ->
         middlebutton = false
         return
 
-      Event.observe a, 'mouseup', (ev = window.event) ->
+      Event.observe a, 'mouseup', (ev) ->
         return unless Event.isMiddleClick(ev) && middlebutton
         kill_href()
         Event.stop(ev)
@@ -74,7 +74,7 @@ do ->
           """.replace(/>\s+/g, '>')
 
       if Prototype.Browser.IE
-        Event.observe a, 'click', (ev = window.event) ->
+        Event.observe a, 'click', (ev) ->
           switch target = @target || '_self'
             when '_self', window.name
               win = window
@@ -89,7 +89,7 @@ do ->
           false
       else
         uri = "data:text/html;charset=utf-8,#{encodeURIComponent(body)}"
-        Event.observe a, 'click', (ev = window.event) ->
+        Event.observe a, 'click', (ev) ->
           @href = uri
           true
 
