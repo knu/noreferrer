@@ -63,15 +63,7 @@ do ->
         ), 500
         return
 
-      body = """
-          <html>
-            <head>
-              <meta http-equiv='Refresh' content='0; URL=#{href.escapeHTML()}' />
-            </head>
-            <body>
-            </body>
-          </html>
-          """.replace(/>\s+/g, '>')
+      body = "<html><head><meta http-equiv='Refresh' content='0; URL=#{href.escapeHTML()}' /></head><body></body></html>"
 
       if Prototype.Browser.IE
         Event.observe a, 'click', (ev) ->

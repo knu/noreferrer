@@ -61,15 +61,7 @@ do ->
         false
       )
 
-      body = """
-          <html>
-            <head>
-              <meta http-equiv='Refresh' content='0; URL=#{$('<p/>').text(href).html()}' />
-            </head>
-            <body>
-            </body>
-          </html>
-          """.replace(/>\s+/g, '>')
+      body = "<html><head><meta http-equiv='Refresh' content='0; URL=#{$('<p/>').text(href).html()}' /></head><body></body></html>"
 
       if $.browser.msie
         $(a).click (ev) ->
