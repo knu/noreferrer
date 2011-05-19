@@ -68,6 +68,15 @@ type.
 
 It does not deal with dynamically created links at the moment.
 
+History
+-------
+
+* v0.1.3
+
+   * Bundled jquery.noreferrer.js.
+
+   * Make small optimizations.
+
 Author
 ------
 
